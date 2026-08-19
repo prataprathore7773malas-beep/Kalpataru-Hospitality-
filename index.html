@@ -1,0 +1,3020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kalpataru Hospitality | Premium Hotelware & HORECA Supplies</title>
+
+    <meta name="description"
+        content="Kalpataru Hospitality provides premium hotelware, HORECA supplies, fine dining solutions, crockery, glassware, cutlery, tableware and kitchenware.">
+
+    <meta name="keywords"
+        content="Kalpataru Hospitality, HORECA Supplies, Hotelware, Crockery, Glassware, Cutlery, Tableware, Kitchenware, Fine Dining">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Premium typography - intentionally different from the reference screenshot -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --black: #0a0a09;
+            --deep-black: #050505;
+            --charcoal: #121211;
+            --cream: #f1eadc;
+            --gold: #c7a76a;
+            --gold-light: #e1c995;
+            --muted: #aaa59a;
+            --white: #ffffff;
+            --border: rgba(199, 167, 106, 0.22);
+            --container: 1240px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--black);
+            color: var(--white);
+            font-family: "DM Sans", sans-serif;
+            overflow-x: hidden;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button,
+        input,
+        textarea {
+            font: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        ::selection {
+            background: var(--gold);
+            color: #000;
+        }
+
+        /* =========================
+           GLOBAL
+        ========================== */
+
+        .container {
+            width: min(92%, var(--container));
+            margin: auto;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .eyebrow {
+            color: var(--gold-light);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(40px, 5vw, 72px);
+            font-weight: 400;
+            line-height: 1.02;
+            letter-spacing: -1.5px;
+        }
+
+        .section-intro {
+            max-width: 620px;
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.8;
+            margin-top: 22px;
+        }
+
+        .gold-line {
+            width: 55px;
+            height: 1px;
+            background: var(--gold);
+            margin: 28px 0;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 52px;
+            padding: 0 28px;
+            border: 1px solid var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 1.8px;
+            font-size: 11px;
+            font-weight: 700;
+            transition: 0.35s ease;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: #090909;
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            border-color: var(--gold-light);
+        }
+
+        .btn-outline {
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--gold);
+            color: #000;
+        }
+
+        /* =========================
+           PRELOADER
+        ========================== */
+
+        .preloader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: var(--deep-black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.7s ease, visibility 0.7s ease;
+        }
+
+        .preloader.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-content {
+            text-align: center;
+        }
+
+        .loader-logo {
+            width: 100px;
+            margin: 0 auto 20px;
+        }
+
+        .loader-line {
+            width: 120px;
+            height: 1px;
+            background: var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loader-line::after {
+            content: "";
+            position: absolute;
+            left: -100%;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            animation: loader 1.4s infinite;
+        }
+
+        @keyframes loader {
+            to {
+                left: 100%;
+            }
+        }
+
+        /* =========================
+           TOP BAR
+        ========================== */
+
+        .topbar {
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            background: #080808;
+        }
+
+        .topbar-inner {
+            min-height: 38px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #9e9b93;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+        }
+
+        .topbar-right {
+            display: flex;
+            gap: 25px;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        .navbar {
+            position: absolute;
+            left: 0;
+            top: 38px;
+            width: 100%;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+            transition: 0.35s ease;
+        }
+
+        .navbar.scrolled {
+            position: fixed;
+            top: 0;
+            background: rgba(7,7,7,0.96);
+            backdrop-filter: blur(15px);
+        }
+
+        .nav-inner {
+            min-height: 92px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 90px;
+            flex-shrink: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 34px;
+        }
+
+        .nav-links a {
+            position: relative;
+            color: #eee;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.6px;
+            transition: 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            border: 1px solid var(--gold);
+            padding: 13px 19px;
+        }
+
+        .nav-cta::after {
+            display: none;
+        }
+
+        .menu-btn {
+            display: none;
+            width: 44px;
+            height: 44px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: transparent;
+            color: white;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 850px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            filter: brightness(0.43);
+            transform: scale(1.02);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(90deg,
+                    rgba(0,0,0,0.82) 0%,
+                    rgba(0,0,0,0.57) 45%,
+                    rgba(0,0,0,0.25) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding-top: 130px;
+            max-width: 800px;
+        }
+
+        .hero-kicker {
+            color: var(--gold-light);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-family: "Playfair Display", serif;
+            font-weight: 400;
+            font-size: clamp(55px, 7.2vw, 105px);
+            line-height: 0.94;
+            letter-spacing: -3px;
+        }
+
+        .hero h1 span {
+            color: var(--gold-light);
+        }
+
+        .hero-description {
+            max-width: 590px;
+            color: #d0cdc5;
+            line-height: 1.8;
+            font-size: 16px;
+            margin: 30px 0 36px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .hero-bottom {
+            position: absolute;
+            z-index: 3;
+            bottom: 35px;
+            left: 0;
+            width: 100%;
+        }
+
+        .hero-bottom-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+        }
+
+        .hero-location {
+            color: #aaa;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        .scroll-indicator {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #aaa;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .scroll-indicator span {
+            display: block;
+            width: 55px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        /* =========================
+           INTRO / STATS
+        ========================== */
+
+        .intro {
+            background: var(--cream);
+            color: #171612;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 90px;
+            align-items: center;
+        }
+
+        .intro .eyebrow {
+            color: #8b6e38;
+        }
+
+        .intro .section-intro {
+            color: #625f57;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 55px;
+            border-top: 1px solid rgba(0,0,0,0.15);
+            border-bottom: 1px solid rgba(0,0,0,0.15);
+        }
+
+        .stat {
+            padding: 30px 20px;
+            border-right: 1px solid rgba(0,0,0,0.15);
+        }
+
+        .stat:last-child {
+            border-right: 0;
+        }
+
+        .stat strong {
+            display: block;
+            font-family: "Playfair Display", serif;
+            font-size: 40px;
+            font-weight: 400;
+        }
+
+        .stat span {
+            display: block;
+            margin-top: 5px;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.8px;
+            color: #777166;
+        }
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about {
+            background: var(--black);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 90px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 75%;
+            height: 75%;
+            border-left: 1px solid var(--gold);
+            border-top: 1px solid var(--gold);
+            opacity: 0.7;
+        }
+
+        .about-image img {
+            position: relative;
+            z-index: 2;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+        }
+
+        .about-copy .section-intro {
+            max-width: 680px;
+        }
+
+        .about-points {
+            margin-top: 35px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px 40px;
+        }
+
+        .about-point {
+            border-top: 1px solid rgba(255,255,255,0.14);
+            padding-top: 18px;
+        }
+
+        .about-point h4 {
+            font-family: "Playfair Display", serif;
+            font-size: 21px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .about-point p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           CATEGORY
+        ========================== */
+
+        .categories {
+            background: #0e0e0d;
+            overflow: hidden;
+        }
+
+        .section-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 30px;
+            margin-bottom: 55px;
+        }
+
+        .slider-controls {
+            display: flex;
+            gap: 8px;
+        }
+
+        .slider-btn {
+            width: 48px;
+            height: 48px;
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: 0.3s ease;
+        }
+
+        .slider-btn:hover {
+            background: var(--gold);
+            color: #000;
+            border-color: var(--gold);
+        }
+
+        .slider-window {
+            overflow: hidden;
+            cursor: grab;
+        }
+
+        .slider-window.dragging {
+            cursor: grabbing;
+        }
+
+        .category-track,
+        .product-track {
+            display: flex;
+            gap: 18px;
+            will-change: transform;
+            user-select: none;
+        }
+
+        .category-item {
+            min-width: calc((100% - 54px) / 4);
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 0.84 / 1;
+        }
+
+        .category-item img {
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .category-item:hover img {
+            transform: scale(1.06);
+        }
+
+        .category-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: end;
+            padding: 25px;
+            background:
+                linear-gradient(to top,
+                    rgba(0,0,0,0.86),
+                    rgba(0,0,0,0.04) 65%);
+        }
+
+        .category-number {
+            color: var(--gold-light);
+            font-size: 10px;
+            letter-spacing: 2px;
+            margin-bottom: 7px;
+        }
+
+        .category-name {
+            font-family: "Playfair Display", serif;
+            font-size: 28px;
+            font-weight: 400;
+        }
+
+        /* =========================
+           PRODUCTS
+        ========================== */
+
+        .products {
+            background: var(--black);
+        }
+
+        .product-item {
+            min-width: calc((100% - 54px) / 4);
+        }
+
+        .product-image {
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            background: #111;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .product-item:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 22px 0 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.13);
+        }
+
+        .product-label {
+            color: var(--gold);
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .product-name {
+            font-family: "Playfair Display", serif;
+            font-size: 25px;
+            font-weight: 400;
+        }
+
+        .product-text {
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.6;
+            margin-top: 8px;
+        }
+
+        .product-link {
+            display: inline-flex;
+            margin-top: 16px;
+            color: var(--gold-light);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 9px;
+            font-weight: 700;
+        }
+
+        /* =========================
+           INDUSTRIES
+        ========================== */
+
+        .industries {
+            background: var(--cream);
+            color: #14130f;
+        }
+
+        .industries .eyebrow {
+            color: #896c37;
+        }
+
+        .industry-grid {
+            margin-top: 60px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-top: 1px solid rgba(0,0,0,0.2);
+        }
+
+        .industry {
+            min-height: 190px;
+            padding: 30px 25px;
+            border-right: 1px solid rgba(0,0,0,0.2);
+            border-bottom: 1px solid rgba(0,0,0,0.2);
+            transition: 0.35s ease;
+        }
+
+        .industry:nth-child(4n) {
+            border-right: 0;
+        }
+
+        .industry:hover {
+            background: #e8decc;
+        }
+
+        .industry-number {
+            color: #96763d;
+            font-size: 10px;
+            letter-spacing: 2px;
+        }
+
+        .industry h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 27px;
+            font-weight: 400;
+            margin-top: 35px;
+        }
+
+        .industry p {
+            margin-top: 9px;
+            color: #706b60;
+            font-size: 12px;
+        }
+
+        /* =========================
+           WHY US
+        ========================== */
+
+        .why-us {
+            background: #0c0c0b;
+        }
+
+        .why-grid {
+            margin-top: 60px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-top: 1px solid rgba(255,255,255,0.14);
+        }
+
+        .why-item {
+            padding: 35px 25px 10px 0;
+            border-right: 1px solid rgba(255,255,255,0.14);
+            margin-right: 25px;
+        }
+
+        .why-item:last-child {
+            border-right: 0;
+        }
+
+        .why-icon {
+            color: var(--gold);
+            font-size: 26px;
+            margin-bottom: 30px;
+        }
+
+        .why-item h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 25px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .why-item p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        /* =========================
+           CTA
+        ========================== */
+
+        .cta {
+            min-height: 470px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background:
+                linear-gradient(90deg, rgba(0,0,0,0.94), rgba(0,0,0,0.55)),
+                radial-gradient(circle at 80% 40%, rgba(199,167,106,0.22), transparent 40%),
+                #10100e;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+        }
+
+        .cta h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(42px, 6vw, 78px);
+            font-weight: 400;
+            line-height: 1;
+        }
+
+        .cta p {
+            max-width: 620px;
+            color: #aaa;
+            line-height: 1.8;
+            margin: 22px 0 32px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact {
+            background: #f2ecdf;
+            color: #15140f;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 100px;
+        }
+
+        .contact .eyebrow {
+            color: #896b36;
+        }
+
+        .contact-details {
+            margin-top: 45px;
+        }
+
+        .contact-detail {
+            padding: 20px 0;
+            border-top: 1px solid rgba(0,0,0,0.17);
+        }
+
+        .contact-detail:last-child {
+            border-bottom: 1px solid rgba(0,0,0,0.17);
+        }
+
+        .contact-detail span {
+            display: block;
+            color: #817a6e;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 9px;
+            margin-bottom: 7px;
+        }
+
+        .contact-detail strong {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .contact-form {
+            background: #11110f;
+            color: white;
+            padding: 45px;
+        }
+
+        .form-title {
+            font-family: "Playfair Display", serif;
+            font-size: 35px;
+            font-weight: 400;
+            margin-bottom: 28px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #aaa;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            border: 1px solid rgba(255,255,255,0.16);
+            background: transparent;
+            color: white;
+            padding: 14px;
+            outline: none;
+            border-radius: 0;
+        }
+
+        .form-group select option {
+            background: #111;
+        }
+
+        .form-group textarea {
+            min-height: 125px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--gold);
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: #050505;
+            padding: 70px 0 25px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 0.8fr 0.8fr 1fr;
+            gap: 50px;
+        }
+
+        .footer-logo {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+
+        .footer-about {
+            color: #85827a;
+            font-size: 12px;
+            line-height: 1.8;
+            max-width: 330px;
+        }
+
+        .footer-title {
+            color: var(--gold-light);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 9px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            font-size: 12px;
+            transition: 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-light);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 55px;
+            padding-top: 22px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            color: #666;
+            font-size: 10px;
+        }
+
+        .footer-credit {
+            color: var(--gold);
+        }
+
+        /* =========================
+           FLOATING BUTTONS
+        ========================== */
+
+        .floating-actions {
+            position: fixed;
+            right: 20px;
+            bottom: 22px;
+            z-index: 500;
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .float-btn {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: #111;
+            color: white;
+            font-size: 19px;
+            transition: 0.3s ease;
+        }
+
+        .float-btn:hover {
+            background: var(--gold);
+            color: #000;
+            border-color: var(--gold);
+        }
+
+        /* =========================
+           SCROLL TOP
+        ========================== */
+
+        .scroll-top {
+            position: fixed;
+            right: 20px;
+            bottom: 140px;
+            width: 45px;
+            height: 45px;
+            border: 1px solid rgba(255,255,255,0.18);
+            background: #111;
+            color: var(--gold-light);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 500;
+        }
+
+        .scroll-top.show {
+            display: flex;
+        }
+
+        /* =========================
+           REVEAL ANIMATION
+        ========================== */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 1050px) {
+
+            .nav-links {
+                gap: 18px;
+            }
+
+            .category-item,
+            .product-item {
+                min-width: calc((100% - 18px) / 2);
+            }
+
+            .industry-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .industry:nth-child(4n) {
+                border-right: 1px solid rgba(0,0,0,0.2);
+            }
+
+            .industry:nth-child(2n) {
+                border-right: 0;
+            }
+
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-item:nth-child(2) {
+                border-right: 0;
+            }
+
+            .why-item {
+                margin-bottom: 30px;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 800px) {
+
+            .section {
+                padding: 85px 0;
+            }
+
+            .topbar {
+                display: none;
+            }
+
+            .navbar {
+                top: 0;
+            }
+
+            .nav-inner {
+                min-height: 78px;
+            }
+
+            .logo {
+                width: 76px;
+            }
+
+            .menu-btn {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                left: 0;
+                top: 78px;
+                width: 100%;
+                background: rgba(7,7,7,0.98);
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                border-top: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 17px 5%;
+                border-bottom: 1px solid rgba(255,255,255,0.08);
+            }
+
+            .nav-links a::after {
+                display: none;
+            }
+
+            .nav-cta {
+                margin: 14px 5%;
+                text-align: center;
+            }
+
+            .hero {
+                min-height: 720px;
+            }
+
+            .hero-content {
+                padding-top: 90px;
+            }
+
+            .hero h1 {
+                font-size: clamp(48px, 14vw, 75px);
+                letter-spacing: -2px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+            .hero-bottom {
+                bottom: 20px;
+            }
+
+            .scroll-indicator {
+                display: none;
+            }
+
+            .intro-grid,
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 55px;
+            }
+
+            .stats {
+                margin-top: 40px;
+            }
+
+            .about-image {
+                max-width: 560px;
+            }
+
+            .section-head {
+                align-items: start;
+                flex-direction: column;
+                margin-bottom: 35px;
+            }
+
+            .category-item,
+            .product-item {
+                min-width: 82%;
+            }
+
+            .industry-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .industry,
+            .industry:nth-child(2n),
+            .industry:nth-child(4n) {
+                border-right: 0;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-item,
+            .why-item:nth-child(2) {
+                border-right: 0;
+                border-bottom: 1px solid rgba(255,255,255,0.12);
+                padding-bottom: 30px;
+                margin-right: 0;
+            }
+
+            .why-item:last-child {
+                border-bottom: 0;
+            }
+
+            .contact-form {
+                padding: 30px 22px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .topbar-inner {
+                font-size: 9px;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero-actions .btn {
+                width: 100%;
+            }
+
+            .hero-bottom-inner {
+                align-items: start;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .stat {
+                border-right: 0;
+                border-bottom: 1px solid rgba(0,0,0,0.15);
+            }
+
+            .stat:last-child {
+                border-bottom: 0;
+            }
+
+            .about-points {
+                grid-template-columns: 1fr;
+            }
+
+            .category-item,
+            .product-item {
+                min-width: 88%;
+            }
+
+            .floating-actions {
+                right: 14px;
+                bottom: 15px;
+            }
+
+            .scroll-top {
+                right: 14px;
+                bottom: 130px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         PRELOADER
+    ========================== -->
+
+    <div class="preloader" id="preloader">
+        <div class="loader-content">
+            <img src="logo.png" alt="Kalpataru Hospitality" class="loader-logo">
+            <div class="loader-line"></div>
+        </div>
+    </div>
+
+
+    <!-- =========================
+         TOP BAR
+    ========================== -->
+
+    <div class="topbar">
+        <div class="container topbar-inner">
+            <div>PREMIUM HOTELWARE • HORECA SUPPLIES • FINE DINING</div>
+
+            <div class="topbar-right">
+                <span>Vadodara, Gujarat</span>
+                <span>Business Enquiries Welcome</span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar" id="navbar">
+        <div class="container nav-inner">
+
+            <a href="#home" class="logo">
+                <img src="logo.png" alt="Kalpataru Hospitality Logo">
+            </a>
+
+            <button class="menu-btn" id="menuBtn" aria-label="Open Menu">
+                ☰
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#categories">Categories</a>
+                <a href="#products">Products</a>
+                <a href="#industries">Industries</a>
+                <a href="#why-us">Why Us</a>
+                <a href="#contact" class="nav-cta">Request Quote</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-bg">
+                <img src="hero.png" alt="Premium Hospitality Supplies">
+            </div>
+
+            <div class="hero-overlay"></div>
+
+            <div class="container">
+                <div class="hero-content reveal">
+
+                    <div class="hero-kicker">
+                        Kalpataru Hospitality
+                    </div>
+
+                    <h1>
+                        Elevated
+                        <br>
+                        <span>Hospitality.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Premium hotelware, HORECA supplies and fine dining
+                        solutions designed for businesses that value quality,
+                        presentation and professional hospitality.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#products" class="btn btn-primary">
+                            Explore Products
+                        </a>
+
+                        <a href="#contact" class="btn btn-outline">
+                            Request Bulk Quote
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="hero-bottom">
+                <div class="container hero-bottom-inner">
+
+                    <div class="hero-location">
+                        First Floor, LE City Center,<br>
+                        Dilawari Pura, Vadodara, Gujarat 390007
+                    </div>
+
+                    <div class="scroll-indicator">
+                        <span></span>
+                        Scroll to explore
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             INTRO
+        ========================== -->
+
+        <section class="section intro">
+            <div class="container">
+
+                <div class="intro-grid reveal">
+
+                    <div>
+                        <div class="eyebrow">
+                            Hospitality Supply Partner
+                        </div>
+
+                        <h2 class="section-title">
+                            Supplying the
+                            <br>
+                            art of hospitality.
+                        </h2>
+                    </div>
+
+                    <div>
+                        <p class="section-intro">
+                            Kalpataru Hospitality brings together premium
+                            hotelware and professional hospitality essentials
+                            for hotels, restaurants, cafés, caterers and
+                            institutional buyers.
+                        </p>
+
+                        <div class="gold-line"></div>
+
+                        <p class="section-intro">
+                            From elegant dining presentation to practical
+                            professional kitchen requirements, our product
+                            categories are curated for modern HORECA
+                            businesses.
+                        </p>
+
+                        <div class="stats">
+
+                            <div class="stat">
+                                <strong>10</strong>
+                                <span>Product Categories</span>
+                            </div>
+
+                            <div class="stat">
+                                <strong>B2B</strong>
+                                <span>Business Focus</span>
+                            </div>
+
+                            <div class="stat">
+                                <strong>360°</strong>
+                                <span>Hospitality Solutions</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             ABOUT
+        ========================== -->
+
+        <section class="section about" id="about">
+
+            <div class="container">
+
+                <div class="about-grid">
+
+                    <div class="about-image reveal">
+                        <img src="about.jpg"
+                            alt="Kalpataru Hospitality">
+                    </div>
+
+                    <div class="about-copy reveal">
+
+                        <div class="eyebrow">
+                            About Kalpataru
+                        </div>
+
+                        <h2 class="section-title">
+                            Built for
+                            <br>
+                            better tables.
+                        </h2>
+
+                        <div class="gold-line"></div>
+
+                        <p class="section-intro">
+                            We specialise in supplying premium hospitality
+                            products that combine functionality, presentation
+                            and refined dining aesthetics.
+                        </p>
+
+                        <p class="section-intro">
+                            Our B2B approach is built around understanding the
+                            requirements of hospitality businesses and helping
+                            them source the right products for their operations.
+                        </p>
+
+                        <div class="about-points">
+
+                            <div class="about-point">
+                                <h4>Premium Selection</h4>
+                                <p>
+                                    Carefully presented products for professional
+                                    hospitality environments.
+                                </p>
+                            </div>
+
+                            <div class="about-point">
+                                <h4>B2B Focus</h4>
+                                <p>
+                                    Solutions designed around business,
+                                    procurement and bulk requirements.
+                                </p>
+                            </div>
+
+                            <div class="about-point">
+                                <h4>Fine Dining</h4>
+                                <p>
+                                    Products that help create an elevated
+                                    dining experience.
+                                </p>
+                            </div>
+
+                            <div class="about-point">
+                                <h4>Hospitality Ready</h4>
+                                <p>
+                                    A broad range of essentials across dining,
+                                    serving and kitchen requirements.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CATEGORIES
+        ========================== -->
+
+        <section class="section categories" id="categories">
+
+            <div class="container">
+
+                <div class="section-head reveal">
+
+                    <div>
+                        <div class="eyebrow">
+                            Explore Our Range
+                        </div>
+
+                        <h2 class="section-title">
+                            Product Categories
+                        </h2>
+
+                        <p class="section-intro">
+                            Explore our hospitality-focused product categories
+                            created for professional B2B requirements.
+                        </p>
+                    </div>
+
+                    <div class="slider-controls">
+                        <button class="slider-btn" id="catPrev">
+                            ←
+                        </button>
+
+                        <button class="slider-btn" id="catNext">
+                            →
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <div class="slider-window" id="categoryWindow">
+
+                    <div class="category-track" id="categoryTrack">
+
+                        <article class="category-item">
+                            <img src="c1.jpg" alt="Crockery">
+                            <div class="category-overlay">
+                                <div>
+                                    <div class="category-number">01</div>
+                                    <h3 class="category-name">Crockery</h3>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="category-item">
+                            <img src="c2.jpg" alt="Glassware">
+                            <div class="category-overlay">
+                                <div>
+                                    <div class="category-number">02</div>
+                                    <h3 class="category-name">Glassware</h3>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="category-item">
+                            <img src="c3.jpg" alt="Cutlery">
+                            <div class="category-overlay">
+                                <div>
+                                    <div class="category-number">03</div>
+                                    <h3 class="category-name">Cutlery</h3>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="category-item">
+                            <img src="c4.jpg" alt="Tableware">
+                            <div class="category-overlay">
+                                <div>
+                                    <div class="category-number">04</div>
+                                    <h3 class="category-name">Tableware</h3>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="category-item">
+                            <img src="c5.jpg" alt="Kitchenware">
+                            <div class="category-overlay">
+                                <div>
+                                    <div class="category-number">05</div>
+                                    <h3 class="category-name">Kitchenware</h3>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="category-item">
+                            <img src="c6.jpg" alt="Serving Ware">
+                            <div class="category-overlay">
+                                <div>
+                                    <div class="category-number">06</div>
+                                    <h3 class="category-name">Serving Ware</h3>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="category-item">
+                            <img src="c7.jpg" alt="Buffet Ware">
+                            <div class="category-overlay">
+                                <div>
+                                    <div class="category-number">07</div>
+                                    <h3 class="category-name">Buffet Ware</h3>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="category-item">
+                            <img src="c8.jpg" alt="Barware">
+                            <div class="category-overlay">
+                                <div>
+                                    <div class="category-number">08</div>
+                                    <h3 class="category-name">Barware</h3>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="category-item">
+                            <img src="c9.jpg" alt="Fine Dining Solutions">
+                            <div class="category-overlay">
+                                <div>
+                                    <div class="category-number">09</div>
+                                    <h3 class="category-name">Fine Dining</h3>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="category-item">
+                            <img src="c10.jpg" alt="Hotelware and HORECA Supplies">
+                            <div class="category-overlay">
+                                <div>
+                                    <div class="category-number">10</div>
+                                    <h3 class="category-name">Hotelware & HORECA</h3>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PRODUCTS
+        ========================== -->
+
+        <section class="section products" id="products">
+
+            <div class="container">
+
+                <div class="section-head reveal">
+
+                    <div>
+                        <div class="eyebrow">
+                            Featured Range
+                        </div>
+
+                        <h2 class="section-title">
+                            Selected Products
+                        </h2>
+
+                        <p class="section-intro">
+                            A glimpse into our product range. Contact us for
+                            product specifications, availability and bulk
+                            requirements.
+                        </p>
+                    </div>
+
+                    <div class="slider-controls">
+
+                        <button class="slider-btn" id="productPrev">
+                            ←
+                        </button>
+
+                        <button class="slider-btn" id="productNext">
+                            →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="slider-window" id="productWindow">
+
+                    <div class="product-track" id="productTrack">
+
+                        <article class="product-item">
+                            <div class="product-image">
+                                <img src="p1.jpg" alt="Premium Hospitality Product">
+                            </div>
+
+                            <div class="product-info">
+                                <div class="product-label">
+                                    Hospitality Collection
+                                </div>
+
+                                <h3 class="product-name">
+                                    Premium Dining Essential
+                                </h3>
+
+                                <p class="product-text">
+                                    Designed for professional hospitality
+                                    environments and bulk procurement.
+                                </p>
+
+                                <a href="#contact" class="product-link">
+                                    Enquire Now →
+                                </a>
+                            </div>
+                        </article>
+
+
+                        <article class="product-item">
+                            <div class="product-image">
+                                <img src="p2.jpg" alt="Premium Hospitality Product">
+                            </div>
+
+                            <div class="product-info">
+                                <div class="product-label">
+                                    Fine Dining Collection
+                                </div>
+
+                                <h3 class="product-name">
+                                    Fine Dining Essential
+                                </h3>
+
+                                <p class="product-text">
+                                    A refined hospitality solution for
+                                    restaurants and premium dining spaces.
+                                </p>
+
+                                <a href="#contact" class="product-link">
+                                    Enquire Now →
+                                </a>
+                            </div>
+                        </article>
+
+
+                        <article class="product-item">
+                            <div class="product-image">
+                                <img src="p3.jpg" alt="Premium Hospitality Product">
+                            </div>
+
+                            <div class="product-info">
+                                <div class="product-label">
+                                    Professional Range
+                                </div>
+
+                                <h3 class="product-name">
+                                    Professional Hospitality Supply
+                                </h3>
+
+                                <p class="product-text">
+                                    Practical and presentation-focused products
+                                    for hospitality businesses.
+                                </p>
+
+                                <a href="#contact" class="product-link">
+                                    Enquire Now →
+                                </a>
+                            </div>
+                        </article>
+
+
+                        <article class="product-item">
+                            <div class="product-image">
+                                <img src="p4.jpg" alt="Premium Hospitality Product">
+                            </div>
+
+                            <div class="product-info">
+                                <div class="product-label">
+                                    HORECA Collection
+                                </div>
+
+                                <h3 class="product-name">
+                                    HORECA Essential
+                                </h3>
+
+                                <p class="product-text">
+                                    Built around the everyday requirements of
+                                    professional hospitality operations.
+                                </p>
+
+                                <a href="#contact" class="product-link">
+                                    Enquire Now →
+                                </a>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             INDUSTRIES
+        ========================== -->
+
+        <section class="section industries" id="industries">
+
+            <div class="container">
+
+                <div class="reveal">
+
+                    <div class="eyebrow">
+                        Who We Serve
+                    </div>
+
+                    <h2 class="section-title">
+                        Built for the
+                        <br>
+                        hospitality industry.
+                    </h2>
+
+                    <p class="section-intro">
+                        Our B2B product range is suited for businesses that
+                        demand consistent presentation, functionality and
+                        professional hospitality supplies.
+                    </p>
+
+                </div>
+
+
+                <div class="industry-grid reveal">
+
+                    <div class="industry">
+                        <div class="industry-number">01</div>
+                        <h3>Hotels</h3>
+                        <p>Hospitality supplies for hotel operations.</p>
+                    </div>
+
+                    <div class="industry">
+                        <div class="industry-number">02</div>
+                        <h3>Restaurants</h3>
+                        <p>Dining and serving solutions for restaurants.</p>
+                    </div>
+
+                    <div class="industry">
+                        <div class="industry-number">03</div>
+                        <h3>Cafés</h3>
+                        <p>Professional table and service essentials.</p>
+                    </div>
+
+                    <div class="industry">
+                        <div class="industry-number">04</div>
+                        <h3>Banquets</h3>
+                        <p>Products for events and hospitality spaces.</p>
+                    </div>
+
+                    <div class="industry">
+                        <div class="industry-number">05</div>
+                        <h3>Caterers</h3>
+                        <p>Professional requirements for catering businesses.</p>
+                    </div>
+
+                    <div class="industry">
+                        <div class="industry-number">06</div>
+                        <h3>Resorts</h3>
+                        <p>Dining and hospitality requirements for resorts.</p>
+                    </div>
+
+                    <div class="industry">
+                        <div class="industry-number">07</div>
+                        <h3>Institutions</h3>
+                        <p>Business-focused hospitality procurement.</p>
+                    </div>
+
+                    <div class="industry">
+                        <div class="industry-number">08</div>
+                        <h3>Distributors</h3>
+                        <p>Professional B2B sourcing opportunities.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             WHY US
+        ========================== -->
+
+        <section class="section why-us" id="why-us">
+
+            <div class="container">
+
+                <div class="reveal">
+
+                    <div class="eyebrow">
+                        The Kalpataru Difference
+                    </div>
+
+                    <h2 class="section-title">
+                        More than
+                        <br>
+                        just supplies.
+                    </h2>
+
+                </div>
+
+
+                <div class="why-grid reveal">
+
+                    <div class="why-item">
+                        <div class="why-icon">✦</div>
+
+                        <h3>Premium Range</h3>
+
+                        <p>
+                            A curated hospitality range designed around
+                            professional dining and service environments.
+                        </p>
+                    </div>
+
+
+                    <div class="why-item">
+                        <div class="why-icon">◇</div>
+
+                        <h3>B2B Approach</h3>
+
+                        <p>
+                            Built around business requirements, procurement
+                            conversations and bulk enquiries.
+                        </p>
+                    </div>
+
+
+                    <div class="why-item">
+                        <div class="why-icon">✧</div>
+
+                        <h3>Fine Dining Focus</h3>
+
+                        <p>
+                            Elegant solutions for businesses where dining
+                            presentation matters.
+                        </p>
+                    </div>
+
+
+                    <div class="why-item">
+                        <div class="why-icon">＋</div>
+
+                        <h3>Complete Range</h3>
+
+                        <p>
+                            Multiple hospitality categories under one
+                            professional supply partner.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CTA
+        ========================== -->
+
+        <section class="cta">
+
+            <div class="container">
+
+                <div class="cta-content reveal">
+
+                    <div class="eyebrow">
+                        For Hotels • Restaurants • HORECA
+                    </div>
+
+                    <h2>
+                        Let's build your
+                        <br>
+                        perfect table.
+                    </h2>
+
+                    <p>
+                        Looking for hospitality supplies in bulk?
+                        Share your requirement with our team and enquire
+                        about the right products for your business.
+                    </p>
+
+                    <a href="#contact" class="btn btn-primary">
+                        Start an Enquiry
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTACT
+        ========================== -->
+
+        <section class="section contact" id="contact">
+
+            <div class="container">
+
+                <div class="contact-grid">
+
+                    <div class="reveal">
+
+                        <div class="eyebrow">
+                            Business Enquiry
+                        </div>
+
+                        <h2 class="section-title">
+                            Let's talk
+                            <br>
+                            business.
+                        </h2>
+
+                        <p class="section-intro">
+                            Tell us what your business needs. Our team can
+                            assist with product enquiries and bulk requirements.
+                        </p>
+
+                        <div class="contact-details">
+
+                            <div class="contact-detail">
+                                <span>Company</span>
+                                <strong>Kalpataru Hospitality</strong>
+                            </div>
+
+                            <div class="contact-detail">
+                                <span>Location</span>
+                                <strong>
+                                    First Floor, LE City Center,
+                                    Dilawari Pura, Vadodara,
+                                    Gujarat 390007
+                                </strong>
+                            </div>
+
+                            <div class="contact-detail">
+                                <span>Business Type</span>
+                                <strong>
+                                    Hotelware & HORECA Supplies
+                                </strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-form reveal">
+
+                        <h3 class="form-title">
+                            Request a Quote
+                        </h3>
+
+                        <form id="quoteForm">
+
+                            <div class="form-row">
+
+                                <div class="form-group">
+                                    <label>Your Name</label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        placeholder="Enter your name"
+                                        required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Company</label>
+                                    <input
+                                        type="text"
+                                        id="company"
+                                        placeholder="Company name"
+                                        required>
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-row">
+
+                                <div class="form-group">
+                                    <label>Phone</label>
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        placeholder="Phone number"
+                                        required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        placeholder="Business email">
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>Requirement</label>
+
+                                <select id="requirement">
+
+                                    <option value="">
+                                        Select requirement
+                                    </option>
+
+                                    <option>
+                                        Crockery
+                                    </option>
+
+                                    <option>
+                                        Glassware
+                                    </option>
+
+                                    <option>
+                                        Cutlery
+                                    </option>
+
+                                    <option>
+                                        Tableware
+                                    </option>
+
+                                    <option>
+                                        Kitchenware
+                                    </option>
+
+                                    <option>
+                                        Serving Ware
+                                    </option>
+
+                                    <option>
+                                        Buffet Ware
+                                    </option>
+
+                                    <option>
+                                        Barware
+                                    </option>
+
+                                    <option>
+                                        Fine Dining Solutions
+                                    </option>
+
+                                    <option>
+                                        Hotelware & HORECA Supplies
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>Message</label>
+
+                                <textarea
+                                    id="message"
+                                    placeholder="Tell us about your requirement..."
+                                    required></textarea>
+
+                            </div>
+
+
+                            <button type="submit" class="btn btn-primary">
+                                Submit Enquiry
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div>
+
+                    <img
+                        src="logo.png"
+                        alt="Kalpataru Hospitality"
+                        class="footer-logo">
+
+                    <p class="footer-about">
+                        Premium hotelware, HORECA supplies and fine dining
+                        solutions for professional hospitality businesses.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <div class="footer-title">
+                        Explore
+                    </div>
+
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#categories">Categories</a>
+                        <a href="#products">Products</a>
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <div class="footer-title">
+                        Categories
+                    </div>
+
+                    <div class="footer-links">
+                        <a href="#categories">Crockery</a>
+                        <a href="#categories">Glassware</a>
+                        <a href="#categories">Cutlery</a>
+                        <a href="#categories">Tableware</a>
+                        <a href="#categories">Kitchenware</a>
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <div class="footer-title">
+                        Contact
+                    </div>
+
+                    <div class="footer-links">
+                        <a href="#contact">Business Enquiry</a>
+                        <a href="#contact">Bulk Orders</a>
+                        <a href="#contact">Request Quote</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <div>
+                    © <span id="year"></span>
+                    Kalpataru Hospitality. All Rights Reserved.
+                </div>
+
+                <div class="footer-credit">
+                    Website crafted by Marwar Infotech
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         FLOATING ACTIONS
+    ========================== -->
+
+    <div class="floating-actions">
+
+        <!-- Replace #contact with actual phone/WhatsApp links later -->
+        <a
+            href="#contact"
+            class="float-btn"
+            aria-label="Call Kalpataru Hospitality">
+            ☎
+        </a>
+
+        <a
+            href="#contact"
+            class="float-btn"
+            aria-label="WhatsApp Kalpataru Hospitality">
+            ◉
+        </a>
+
+    </div>
+
+
+    <!-- =========================
+         SCROLL TOP
+    ========================== -->
+
+    <button class="scroll-top" id="scrollTop">
+        ↑
+    </button>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        /* ==========================================
+           PRELOADER
+        ========================================== */
+
+        window.addEventListener("load", function () {
+
+            const preloader = document.getElementById("preloader");
+
+            setTimeout(() => {
+                preloader.classList.add("hide");
+            }, 600);
+
+        });
+
+
+        /* ==========================================
+           YEAR
+        ========================================== */
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+
+        /* ==========================================
+           NAVBAR
+        ========================================== */
+
+        const navbar = document.getElementById("navbar");
+
+        window.addEventListener("scroll", function () {
+
+            if (window.scrollY > 80) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+
+        });
+
+
+        /* ==========================================
+           MOBILE MENU
+        ========================================== */
+
+        const menuBtn = document.getElementById("menuBtn");
+        const navLinks = document.getElementById("navLinks");
+
+        menuBtn.addEventListener("click", function () {
+
+            navLinks.classList.toggle("open");
+
+            if (navLinks.classList.contains("open")) {
+                menuBtn.innerHTML = "×";
+            } else {
+                menuBtn.innerHTML = "☰";
+            }
+
+        });
+
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                navLinks.classList.remove("open");
+                menuBtn.innerHTML = "☰";
+
+            });
+
+        });
+
+
+        /* ==========================================
+           REVEAL ANIMATION
+        ========================================== */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+        const revealObserver =
+            new IntersectionObserver(
+                (entries) => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("active");
+
+                            revealObserver.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach(element => {
+            revealObserver.observe(element);
+        });
+
+
+        /* ==========================================
+           UNIVERSAL DRAG SLIDER
+        ========================================== */
+
+        function createSlider(options) {
+
+            const track =
+                document.getElementById(options.track);
+
+            const windowElement =
+                document.getElementById(options.window);
+
+            const prev =
+                document.getElementById(options.prev);
+
+            const next =
+                document.getElementById(options.next);
+
+            let position = 0;
+            let startX = 0;
+            let currentX = 0;
+            let isDragging = false;
+            let startPosition = 0;
+            let autoSlideTimer;
+
+
+            function getGap() {
+
+                const styles =
+                    window.getComputedStyle(track);
+
+                return parseFloat(styles.gap) || 0;
+
+            }
+
+
+            function getStep() {
+
+                const item =
+                    track.children[0];
+
+                if (!item) return 0;
+
+                return item.offsetWidth + getGap();
+
+            }
+
+
+            function getMaxPosition() {
+
+                const totalWidth =
+                    track.scrollWidth;
+
+                const visibleWidth =
+                    windowElement.clientWidth;
+
+                return Math.max(
+                    0,
+                    totalWidth - visibleWidth
+                );
+
+            }
+
+
+            function update() {
+
+                const max =
+                    getMaxPosition();
+
+                position =
+                    Math.max(
+                        0,
+                        Math.min(position, max)
+                    );
+
+                track.style.transform =
+                    `translate3d(${-position}px,0,0)`;
+
+            }
+
+
+            function move(direction) {
+
+                const step =
+                    getStep();
+
+                if (!step) return;
+
+                position +=
+                    direction * step;
+
+                update();
+
+                restartAuto();
+
+            }
+
+
+            prev.addEventListener(
+                "click",
+                () => move(-1)
+            );
+
+            next.addEventListener(
+                "click",
+                () => move(1)
+            );
+
+
+            /* Mouse Drag */
+
+            windowElement.addEventListener(
+                "mousedown",
+                (e) => {
+
+                    isDragging = true;
+                    startX = e.pageX;
+                    startPosition = position;
+
+                    windowElement.classList.add(
+                        "dragging"
+                    );
+
+                    track.style.transition =
+                        "none";
+
+                    stopAuto();
+
+                }
+            );
+
+
+            window.addEventListener(
+                "mousemove",
+                (e) => {
+
+                    if (!isDragging) return;
+
+                    currentX = e.pageX;
+
+                    const distance =
+                        currentX - startX;
+
+                    position =
+                        startPosition - distance;
+
+                    update();
+
+                }
+            );
+
+
+            window.addEventListener(
+                "mouseup",
+                () => {
+
+                    if (!isDragging) return;
+
+                    isDragging = false;
+
+                    windowElement.classList.remove(
+                        "dragging"
+                    );
+
+                    track.style.transition =
+                        "";
+
+                    update();
+
+                    restartAuto();
+
+                }
+            );
+
+
+            /* Touch Drag */
+
+            windowElement.addEventListener(
+                "touchstart",
+                (e) => {
+
+                    isDragging = true;
+
+                    startX =
+                        e.touches[0].pageX;
+
+                    startPosition =
+                        position;
+
+                    track.style.transition =
+                        "none";
+
+                    stopAuto();
+
+                },
+                {
+                    passive: true
+                }
+            );
+
+
+            windowElement.addEventListener(
+                "touchmove",
+                (e) => {
+
+                    if (!isDragging) return;
+
+                    currentX =
+                        e.touches[0].pageX;
+
+                    const distance =
+                        currentX - startX;
+
+                    position =
+                        startPosition - distance;
+
+                    update();
+
+                },
+                {
+                    passive: true
+                }
+            );
+
+
+            windowElement.addEventListener(
+                "touchend",
+                () => {
+
+                    isDragging = false;
+
+                    track.style.transition =
+                        "";
+
+                    update();
+
+                    restartAuto();
+
+                }
+            );
+
+
+            /* Auto Slide */
+
+            function startAuto() {
+
+                autoSlideTimer =
+                    setInterval(() => {
+
+                        const max =
+                            getMaxPosition();
+
+                        if (position >= max - 5) {
+
+                            position = 0;
+
+                        } else {
+
+                            position += getStep();
+
+                        }
+
+                        update();
+
+                    }, options.interval || 3500);
+
+            }
+
+
+            function stopAuto() {
+
+                clearInterval(
+                    autoSlideTimer
+                );
+
+            }
+
+
+            function restartAuto() {
+
+                stopAuto();
+
+                startAuto();
+
+            }
+
+
+            windowElement.addEventListener(
+                "mouseenter",
+                stopAuto
+            );
+
+            windowElement.addEventListener(
+                "mouseleave",
+                restartAuto
+            );
+
+
+            window.addEventListener(
+                "resize",
+                update
+            );
+
+
+            update();
+            startAuto();
+
+        }
+
+
+        /* ==========================================
+           CATEGORY SLIDER
+        ========================================== */
+
+        createSlider({
+
+            track: "categoryTrack",
+
+            window: "categoryWindow",
+
+            prev: "catPrev",
+
+            next: "catNext",
+
+            interval: 3000
+
+        });
+
+
+        /* ==========================================
+           PRODUCT SLIDER
+        ========================================== */
+
+        createSlider({
+
+            track: "productTrack",
+
+            window: "productWindow",
+
+            prev: "productPrev",
+
+            next: "productNext",
+
+            interval: 3500
+
+        });
+
+
+        /* ==========================================
+           QUOTE FORM
+        ========================================== */
+
+        const quoteForm =
+            document.getElementById("quoteForm");
+
+        quoteForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+                const name =
+                    document.getElementById("name").value;
+
+                const company =
+                    document.getElementById("company").value;
+
+                const phone =
+                    document.getElementById("phone").value;
+
+                const email =
+                    document.getElementById("email").value;
+
+                const requirement =
+                    document.getElementById("requirement").value;
+
+                const message =
+                    document.getElementById("message").value;
+
+
+                /*
+                    Temporary enquiry handler.
+
+                    Later replace this with:
+                    - WhatsApp API
+                    - Formspree
+                    - EmailJS
+                    - PHP backend
+                    - Your own backend
+                */
+
+                const enquiryText =
+                    `Hello Kalpataru Hospitality,
+
+Name: ${name}
+Company: ${company}
+Phone: ${phone}
+Email: ${email}
+Requirement: ${requirement}
+
+Message:
+${message}`;
+
+
+                console.log(enquiryText);
+
+                alert(
+                    "Thank you! Your enquiry has been captured. Our team will contact you shortly."
+                );
+
+                quoteForm.reset();
+
+            }
+        );
+
+
+        /* ==========================================
+           SCROLL TOP
+        ========================================== */
+
+        const scrollTop =
+            document.getElementById("scrollTop");
+
+        window.addEventListener(
+            "scroll",
+            () => {
+
+                if (window.scrollY > 600) {
+                    scrollTop.classList.add("show");
+                } else {
+                    scrollTop.classList.remove("show");
+                }
+
+            }
+        );
+
+
+        scrollTop.addEventListener(
+            "click",
+            () => {
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>
